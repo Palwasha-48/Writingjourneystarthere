@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>شاعری – MIASLAP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+      body {
+        background: linear-gradient(135deg, #fdf6f0, #fbeee6);
+        font-family: "Noto Nastaliq Urdu", serif;
+      }
+      .highlight {
+        color: #8b5e3c;
+      }
+      .btn-read {
+        color: #8b5e3c;
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s ease;
+      }
+      .btn-read:hover {
+        border-bottom: 2px solid #8b5e3c;
+        transform: translateY(-2px);
+      }
+      .card {
+        background: linear-gradient(135deg, #ffffff, #fef4e7);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body class="text-gray-800">
+    <!-- Navbar (Same as Home) -->
+    <nav
+      class="flex justify-between items-center px-8 py-4 bg-[#fffdfc]/80 backdrop-blur-md shadow-md sticky top-0 z-50"
+    >
+      <div class="flex gap-6 text-lg">
+        <a href="../Peotry/pmain.html" class="font-semibold highlight"
+          >Poetry</a
+        >
+        <a href="../Stories/smain.html" class="hover:text-[#6d4b32] transition"
+          >Stories</a
+        >
+        <a href="../index.html" class="hover:text-[#6d4b32] transition">Home</a>
+      </div>
+      <div class="text-2xl font-bold highlight flex items-center gap-2">
+        <a href="../index.html"> MIASLAP 💎 </a>
+      </div>
+    </nav>
+
+    <!-- Poetry Section -->
+    <section class="py-16 px-6">
+      <h1
+        class="text-5xl font-bold text-center highlight mb-10"
+        data-aos="fade-up"
+      >
+        شاعری
+      </h1>
+      <p
+        class="text-center text-gray-600 mb-8 text-lg"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        کہاں ہوتا تھا تو؟ جب شاعری نا ہوتی تھی.. 🌸
+      </p>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+      >
+        <!-- Poetry Card 1 -->
+        <div
+          class="card rounded-xl p-6 shadow"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <h2 class="text-3xl font-semibold highlight mb-3">غزل #1</h2>
+          <p class="mb-6 text-justify">
+            کیا تم جانتے ہو؟ <br />
+            کہ، <br />
+            جب کوئی کسی ایسے انسان کو چھوڑ جاتا ہے <br />
+            جو اس سے محبت کرتا ہو، <br />
+            تو اُس محبت کرنے والے پر کیا گزرتی ہے؟ <br />
+            </p>
+          <a href="p1.html" class="btn-read font-medium">مزید پڑھیں</a>
+        </div>
+
+        <!-- Poetry Card 2 -->
+        <div
+          class="card rounded-xl p-6 shadow"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <h2 class="text-3xl font-semibold highlight mb-3">غزل #2</h2>
+          <p class="mb-6 text-justify">
+            کاش <br />
+            کبھی زندگی میں ایسی شام آئے، <br />
+            وہ میرے ساتھ ہو، <br />
+            وہ پرانا ساتھ ہو۔ <br />
+          </p>
+          <a href="p2.html" class="btn-read font-medium">مزید پڑھیں</a>
+        </div>
+
+        <!-- Poetry Card 3 -->
+        <div
+          class="card rounded-xl p-6 shadow"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <h2 class="text-3xl font-semibold highlight mb-3">غزل #3</h2>
+          <p class="mb-6 text-justify">
+            آج غضب ہوگیا، <br />
+            وہ چمکتی آنکھوں پر فِدا ہوگیا۔ <br />
+            مگر غضب کی بات یہ تھی کہ، <br />
+            وہ چمکتی آنکھیں میری نہیں تھیں۔
+          </p>
+          <a href="p3.html" class="btn-read font-medium">مزید پڑھیں</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
