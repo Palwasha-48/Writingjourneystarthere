@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>مِءاصلپ</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
       body {
         background-color: #fefaf6;
         font-family: "Georgia", serif;
+        scroll-behavior: smooth;
       }
       .section-bg {
         background: linear-gradient(135deg, #fdf6f0, #fbeee6);
@@ -22,31 +24,88 @@
       .btn-primary {
         background-color: #8b5e3c;
         color: #fff;
+        transition: all 0.3s ease;
       }
       .btn-primary:hover {
         background-color: #6d4b32;
+        transform: scale(1.05);
+      }
+      .scroll-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #8b5e3c;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        transition: all 0.3s ease;
+      }
+      .scroll-top:hover {
+        background-color: #6d4b32;
+      }
+      .calligraphy {
+        position: absolute;
+        font-size: 150px;
+        color: #d8c2ad;
+        opacity: 0.05;
+        pointer-events: none;
+        z-index: 0;
       }
     </style>
   </head>
-  <body class="text-gray-800">
+  <body class="text-gray-800 relative">
     <!-- Navbar -->
-    <nav
-      class="flex justify-between items-center px-8 py-4 bg-[#fffdfc]/80 backdrop-blur-md shadow-lg sticky top-0 z-50"
+    <!-- Navbar -->
+<nav
+  class="flex justify-between items-center px-8 py-4 bg-[#fffdfc]/80 backdrop-blur-md shadow-lg sticky top-0 z-50"
+>
+  <div class="text-3xl font-bold highlight flex items-center gap-2">
+    <a href="../index.html">💎MIASLAP</a>
+  </div>
+
+  <!-- Desktop Menu -->
+  <div class="hidden md:flex gap-8 text-lg font-medium">
+    <a href="#about" class="hover:text-[#6d4b32] transition">About</a>
+    <a href="Stories/smain.html" class="hover:text-[#6d4b32] transition">Stories</a>
+    <a href="Peotry/pmain.html" class="hover:text-[#6d4b32] transition">Poetry</a>
+  </div>
+
+  <!-- Mobile Menu Button -->
+  <div class="md:hidden">
+    <button
+      onclick="toggleMenu()"
+      class="text-3xl focus:outline-none highlight"
     >
-      <div class="text-3xl font-bold highlight flex items-center gap-2">
-        💎MIASLAP
-      </div>
-      <div class="flex gap-8 text-lg font-medium">
-        <a href="#about" class="hover:text-[#6d4b32] transition">About</a>
-        <a href="#stories" class="hover:text-[#6d4b32] transition">Stories</a>
-        <a href="#poetry" class="hover:text-[#6d4b32] transition">Poetry</a>
-      </div>
-    </nav>
+      ☰
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div
+  id="mobileMenu"
+  class="hidden flex flex-col gap-4 text-center bg-[#fffdfc] py-4 shadow-md md:hidden"
+>
+  <a href="#about" class="hover:text-[#6d4b32] transition block">About</a>
+  <a href="Stories/smain.html" class="hover:text-[#6d4b32] transition block">Stories</a>
+  <a href="Peotry/pmain.html" class="hover:text-[#6d4b32] transition block">Poetry</a>
+</div>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
+  }
+</script>
 
     <!-- Hero Section -->
     <section
-      class="flex flex-col justify-center items-center text-center py-32 section-bg bg-cover"
+      class="flex flex-col justify-center items-center text-center py-32 section-bg bg-cover relative"
+      data-aos="fade-up"
     >
+      <div class="calligraphy">مِءاصلپ</div>
       <h1 class="text-5xl md:text-6xl font-extrabold highlight mb-6">
         Khush Aamdeed!
       </h1>
@@ -55,23 +114,20 @@
       </p>
       <a
         href="stories.html"
-        class="mt-6 inline-block btn-primary px-6 py-2 rounded-full transition"
+        class="mt-6 inline-block btn-primary px-6 py-2 rounded-full"
         >Discover My World</a
       >
     </section>
 
-<!--     <script
-      async="async"
-      data-cfasync="false"
-      src="//pl27166255.profitableratecpm.com/10b92013d8539c6a3e00964d8c3ca152/invoke.js"
-    ></script>
-    <div id="container-10b92013d8539c6a3e00964d8c3ca152"></div>
- -->
     <!-- About Section -->
-    <section id="about" class="py-20 px-6 bg-[#fdf2e9] text-center">
+    <section
+      id="about"
+      class="py-20 px-6 bg-[#fdf2e9] text-center"
+      data-aos="fade-up"
+    >
       <h2 class="text-4xl font-bold highlight mb-4">About Me</h2>
       <p
-        class="max-w-3xl mx-auto text-gray-700 lg:text-[22px] md:text-[20px] sm:text-[18px] ing-relaxed"
+        class="max-w-3xl mx-auto text-gray-700 lg:text-[22px] md:text-[20px] sm:text-[18px]"
       >
         This is my first website application :) <br />
         I made it to share my short stories and poetry with the world.
@@ -86,147 +142,28 @@
     </section>
 
     <!-- Stories Preview Section -->
-    <section class="py-16 px-6">
+    <section class="py-16 px-6" data-aos="fade-up">
       <h2 class="text-4xl font-bold text-center highlight mb-10">
         Stories ........ شاعری
       </h2>
-      <!-- <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
-      >
-
-        <div
-          class="card-bg shadow-lg rounded-lg p-6 hover:shadow-xl transition"
-        >
-          <h3 class="text-2xl font-semibold highlight mb-2">Sarsarati Hawa</h3>
-          <p class="text-gray-700 mb-4">
-            Aik mukhtasir kahani jo khizan ke aasman tale guzre lamhat ko qaid
-            karti hai...
-          </p>
-          <a href="stories.html" class="highlight font-medium hover:underline"
-            >Mazeed Parhein</a
-          >
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="card-bg p-6 rounded-xl shadow hover:scale-105 transition">
+          <h3 class="text-xl font-semibold highlight mb-2">پہلی کہانی</h3>
+          <p class="text-gray-600">Choti si jhalak...</p>
         </div>
-      
-        <div
-          class="card-bg shadow-lg rounded-lg p-6 hover:shadow-xl transition"
-        >
-          <h3 class="text-2xl font-semibold highlight mb-2">
-            Sitaaron Bhari Raat
-          </h3>
-          <p class="text-gray-700 mb-4">
-            Mohabbat aur judai ka jazbati safar, makhmali aasman tale likha
-            gaya...
-          </p>
-          <a href="stories.html" class="highlight font-medium hover:underline"
-            >Mazeed Parhein</a
-          >
+        <div class="card-bg p-6 rounded-xl shadow hover:scale-105 transition">
+          <h3 class="text-xl font-semibold highlight mb-2">دوسری شاعری</h3>
+          <p class="text-gray-600">Ek nazm ka hissa...</p>
         </div>
-      
-        <div
-          class="card-bg shadow-lg rounded-lg p-6 hover:shadow-xl transition"
-        >
-          <h3 class="text-2xl font-semibold highlight mb-2">
-            Yaadon Ke Tukray
-          </h3>
-          <p class="text-gray-700 mb-4">
-            Aik kahani jahan kal ki yaadein kal ke khwaabon se milti hain...
-          </p> 
-          <a href="stories.html" class="highlight font-medium hover:underline"
-            >Mazeed Parhein</a
-          >
-        </div> 
-      </div>
-      <div class="text-center mt-8">
-        <a
-          href="stories.html"
-          class="inline-block btn-primary px-5 py-2 rounded-full transition"
-          >Tamam Kahaniyan Dekhein</a
-        >
-      </div> -->
-
-      <div
-        class="max-w-3xl mx-auto text-center mt-8 text-gray-700 lg:text-[24px] md:text-[22px] sm:text-[20px]"
-      >
-        Kahaniyan raaste mein hain… bas thode din aur! 🥰✨
+        <div class="card-bg p-6 rounded-xl shadow hover:scale-105 transition">
+          <h3 class="text-xl font-semibold highlight mb-2">تیسری تحریر</h3>
+          <p class="text-gray-600">Naya tasalsul...</p>
+        </div>
       </div>
     </section>
 
-    <!--    
-    <section class="py-16 px-6 section-bg">
-      <h2 class="text-4xl font-bold text-center highlight mb-10">
-        Dil Se Shaairy
-      </h2>
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
-      >
-        
-        <div
-          class="card-bg shadow-lg rounded-lg p-6 hover:shadow-xl transition"
-        >
-          <h3 class="text-2xl font-semibold highlight mb-2">
-            Rooh Ki Sargoshiyan
-          </h3>
-          <p class="text-gray-700 mb-4">
-            Ash'aar ka aik majmua jo dil aur rooh se baat karta hai...
-          </p>
-          <a href="poetry.html" class="highlight font-medium hover:underline"
-            >Daryaft Karein</a
-          >
-        </div>
-        
-        <div
-          class="card-bg shadow-lg rounded-lg p-6 hover:shadow-xl transition"
-        >
-          <h3 class="text-2xl font-semibold highlight mb-2">
-            Hawa Mein Pankhuriyan
-          </h3>
-          <p class="text-gray-700 mb-4">
-            Ash'aar jo narm hawa mein behte huye pankhuriyon ki tarah hain...
-          </p>
-          <a href="poetry.html" class="highlight font-medium hover:underline"
-            >Daryaft Karein</a
-          >
-        </div>
-        
-        <div
-          class="card-bg shadow-lg rounded-lg p-6 hover:shadow-xl transition"
-        >
-          <h3 class="text-2xl font-semibold highlight mb-2">
-            Khamoshiyon Ki Bazgasht
-          </h3>
-          <p class="text-gray-700 mb-4">
-            Aisay ash'aar jo dil ke khamosh rahdaariyon mein goonjhtay hain...
-          </p>
-          <a href="poetry.html" class="highlight font-medium hover:underline"
-            >Daryaft Karein</a
-          >
-        </div>
-      </div>
-      <div class="text-center mt-8">
-        <a
-          href="poetry.html"
-          class="inline-block btn-primary px-5 py-2 rounded-full transition"
-          >Mazeed Shaairy Daryaft Karein</a
-        >
-      </div>
-    </section> -->
-
-    <script type="text/javascript">
-      atOptions = {
-        key: "06dc782afd64dce6338db7dbb003ca30",
-        format: "iframe",
-        height: 60,
-        width: 468,
-        params: {},
-      };
-    </script>
-    <script
-      type="text/javascript"
-      src="//www.highperformanceformat.com/06dc782afd64dce6338db7dbb003ca30/invoke.js"
-    ></script>
-
     <!-- Feedback Section -->
-    <section class="py-10 bg-[#fef1e6] text-center">
+    <section class="py-10 bg-[#fef1e6] text-center" data-aos="fade-up">
       <p
         class="italic text-gray-700 lg:text-[24px] md:text-[22px] sm:text-[20px]"
       >
@@ -247,5 +184,28 @@
         Crafted with ❤️
       </p>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <div
+      class="scroll-top"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    >
+      ↑
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+
+      // Show scroll button
+      window.addEventListener("scroll", function () {
+        const scrollBtn = document.querySelector(".scroll-top");
+        if (window.scrollY > 300) {
+          scrollBtn.style.display = "block";
+        } else {
+          scrollBtn.style.display = "none";
+        }
+      });
+    </script>
   </body>
 </html>
