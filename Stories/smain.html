@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>کہانیاں – MIASLAP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+      body {
+        background: linear-gradient(135deg, #fdf6f0, #fbeee6);
+        font-family: "Noto Nastaliq Urdu", serif;
+      }
+      .highlight {
+        color: #8b5e3c;
+      }
+      .btn-read {
+        color: #8b5e3c;
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s ease;
+      }
+      .btn-read:hover {
+        border-bottom: 2px solid #8b5e3c;
+        transform: translateY(-2px);
+      }
+      .card {
+        background: linear-gradient(135deg, #ffffff, #fef4e7);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body class="text-gray-800">
+    <!-- Navbar -->
+    <nav
+      class="flex justify-between items-center px-8 py-4 bg-[#fffdfc]/80 backdrop-blur-md shadow-md sticky top-0 z-50"
+    >
+      <div class="flex gap-6 text-lg">
+        <a href="../Peotry/pmain.html" class="hover:text-[#6d4b32] transition"
+          >Poetry</a
+        >
+        <a href="../Stories/smain.html" class="font-semibold highlight"
+          >Stories</a
+        >
+        <a href="../index.html" class="hover:text-[#6d4b32] transition">Home</a>
+      </div>
+      <div class="text-2xl font-bold highlight flex items-center gap-2">
+        <a href="../index.html"> MIASLAP 💎</a>
+      </div>
+    </nav>
+
+    <!-- Stories Section -->
+    <section class="py-16 px-6">
+      <h1
+        class="text-5xl font-bold text-center highlight mb-10"
+        data-aos="fade-up"
+      >
+        کہانیاں
+      </h1>
+      <p
+        class="text-center text-gray-600 mb-8 text-lg"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        میں لکھتی ہوں، <br />
+        تب، <br />
+        جب بہت خوش ہوتی ہوں۔ <br />
+        اور تب، <br />
+        جب بہت اداس ہوتی ہوں۔
+      </p>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+      >
+        <!-- Story Card 1 -->
+        <div
+          class="card rounded-xl p-6 shadow"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <h2 class="text-3xl font-semibold highlight mb-3">کہانی #1</h2>
+          <p class="text-gray-700 mb-4">
+            ایک جانا پہچانا شخص، فائلوں میں سر دیے اپنے کام میں مصروف ہے .......... <br />
+          </p>
+          <a href="s1.html" class="btn-read font-medium">مزید پڑھیں</a>
+        </div>
+
+        <!-- Story Card 2 -->
+        <div
+          class="card rounded-xl p-6 shadow"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <h2 class="text-3xl font-semibold highlight mb-3">کہانی #2</h2>
+          <p class="text-gray-700 mb-4">
+            ایک کہانی جو آپ کو رکنے اور ہر لفظ کو محسوس کرنے پر مجبور کرے گی...
+          </p>
+          <a href="story2.html" class="btn-read font-medium">مزید پڑھیں</a>
+        </div>
+        
+        <!-- Story Card 3 -->
+        <div
+          class="card rounded-xl p-6 shadow"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <h2 class="text-3xl font-semibold highlight mb-3">کہانی #3</h2>
+          <p class="text-gray-700 mb-4">
+            جذبات میں لپٹی چند خوبصورت سطور میں ڈوب جائیں...
+          </p>
+          <a href="story3.html" class="btn-read font-medium">مزید پڑھیں</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
