@@ -30,14 +30,28 @@
       .btn-back:hover {
         background-color: #6d4b32;
       }
+      .responsive-ad iframe {
+        max-width: 100%;
+        height: auto;
+        border: none;
+      }
     </style>
   </head>
   <body class="text-gray-800">
     <!-- Navbar -->
     <nav
-      class="flex justify-between items-center px-8 py-4 bg-[#fffdfc]/80 backdrop-blur-md shadow-md sticky top-0 z-50"
+      class="flex flex-row-reverse justify-between items-center px-8 py-4 bg-[#fffdfc]/80 backdrop-blur-md shadow-lg sticky top-0 z-50"
     >
-      <div class="flex gap-6 text-lg">
+      <!-- ✅ Logo on Left (LTR) -->
+      <div
+        class="text-3xl font-bold highlight flex items-center gap-2"
+        dir="ltr"
+      >
+        <a href="../index.html">💎MIASLAP</a>
+      </div>
+
+      <!-- ✅ Desktop Menu -->
+      <div class="hidden md:flex gap-8 text-lg font-medium">
         <a href="../Peotry/pmain.html" class="hover:text-[#6d4b32] transition"
           >Poetry</a
         >
@@ -46,10 +60,44 @@
         >
         <a href="../index.html" class="hover:text-[#6d4b32] transition">Home</a>
       </div>
-      <div class="text-2xl font-bold highlight flex items-center gap-2">
-        <a href="../index.html"> MIASLAP💎 </a>
+
+      <!-- ✅ Mobile Menu Button -->
+      <div class="md:hidden">
+        <button
+          onclick="toggleMenu()"
+          class="text-3xl focus:outline-none highlight"
+        >
+          ☰
+        </button>
       </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobileMenu"
+      class="hidden flex flex-col gap-4 text-center bg-[#fffdfc] py-4 shadow-md md:hidden"
+    >
+      <a href="../index.html" class="hover:text-[#6d4b32] transition block"
+        >Home</a
+      >
+      <a
+        href="../Stories/smain.html"
+        class="hover:text-[#6d4b32] transition block"
+        >Stories</a
+      >
+      <a
+        href="../Peotry/pmain.html"
+        class="hover:text-[#6d4b32] transition block"
+        >Poetry</a
+      >
+    </div>
+
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("hidden");
+      }
+    </script>
 
     <!-- Poem Section -->
     <section class="py-16 px-6 max-w-3xl mx-auto" data-aos="fade-up">
@@ -110,9 +158,9 @@
         data-aos="fade-up"
         data-aos-delay="100"
       >
-      <h5 class="text-3xl font-bold highlight mb-14 text-center">
+        <h5 class="text-3xl font-bold highlight mb-14 text-center">
           مجھے تم اچھے لگتے ہو۔۔۔🌸
-          </h5>
+        </h5>
         <p class="mb-8 text-justify">
           اس نے مجھ سے پوچھا تمہیں کیا اچھا لگتا ہے؟<br />
           میں نے کہا:
@@ -279,9 +327,8 @@
       </div>
     </section>
 
-    <!-- ✅ Ads Area -->
-    <section class="py-10">
-      <!-- Ad 3 -->
+    <!-- ✅ Ads Area (Responsive) -->
+    <div class="responsive-ad my-6">
       <script type="text/javascript">
         atOptions = {
           key: "06dc782afd64dce6338db7dbb003ca30",
@@ -293,17 +340,9 @@
       </script>
       <script
         type="text/javascript"
-        src="//www.highperformanceformat.com/06dc782afd64dce6338db7dbb003ca30/invoke.js"
+        src="https://www.highperformanceformat.com/06dc782afd64dce6338db7dbb003ca30/invoke.js"
       ></script>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-[#eaddcf] py-6 text-center text-gray-700 text-[17px]">
-      <p>
-        &copy; 2025 مِءاصلپ by a girl <br />
-        Crafted with ❤️
-      </p>
-    </footer>
+    </div>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
