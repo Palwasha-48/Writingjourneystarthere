@@ -11,11 +11,36 @@
     />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
+      html, body {
+        overflow-x: hidden; /* ✅ Prevent horizontal scroll */
+      }
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
       body {
         background-color: #fefaf6;
         font-family: "Georgia", serif;
         scroll-behavior: smooth;
-        overflow-x: hidden; /* 🟢 Prevent horizontal scroll */
+        width: 100vw; /* ✅ Make sure body doesn’t exceed viewport width */
+        position: relative;
+      }
+      .section-bg {
+        background: linear-gradient(135deg, #fdf6f0, #fbeee6);
+      }
+      .card-bg {
+        background: linear-gradient(135deg, #ffffff, #fdf4e7);
+      }
+      .highlight {
+        color: #8b5e3c;
+      }
+      .btn-primary {
+        background-color: #8b5e3c;
+        color: #fff;
+        transition: all 0.3s ease;
+      }
+      .btn-primary:hover {
+        background-color: #6d4b32;
+        transform: scale(1.05);
       }
       .calligraphy {
         position: absolute;
@@ -32,12 +57,12 @@
       }
     </style>
   </head>
-  <body class="text-gray-800 relative">
+  <body class="text-gray-800 relative overflow-x-hidden">
     <!-- Navbar -->
     <nav
       class="flex justify-between items-center px-8 py-4 bg-[#fffdfc]/80 backdrop-blur-md shadow-lg sticky top-0 z-50"
     >
-      <div class="text-3xl font-bold text-[#8b5e3c] flex items-center gap-2">
+      <div class="text-3xl font-bold highlight flex items-center gap-2">
         <a href="../index.html">💎MIASLAP</a>
       </div>
 
@@ -56,7 +81,7 @@
       <div class="md:hidden">
         <button
           onclick="toggleMenu()"
-          class="text-3xl focus:outline-none text-[#8b5e3c]"
+          class="text-3xl focus:outline-none highlight"
         >
           ☰
         </button>
@@ -86,11 +111,11 @@
 
     <!-- Hero Section -->
     <section
-      class="flex flex-col justify-center items-center text-center py-32 bg-gradient-to-br from-[#fdf6f0] to-[#fbeee6] relative"
+      class="flex flex-col justify-center items-center text-center py-32 section-bg bg-cover relative overflow-x-hidden"
       data-aos="fade-up"
     >
       <div class="calligraphy">مِءاصلپ</div>
-      <h1 class="text-5xl md:text-6xl font-extrabold text-[#8b5e3c] mb-6">
+      <h1 class="text-5xl md:text-6xl font-extrabold highlight mb-6">
         Khush Aamdeed!
       </h1>
       <p class="text-lg md:text-xl max-w-2xl text-gray-700">
@@ -98,7 +123,7 @@
       </p>
       <a
         href="#story_poetry_section"
-        class="mt-6 inline-block bg-[#8b5e3c] hover:bg-[#6d4b32] text-white px-6 py-2 rounded-full transition"
+        class="mt-6 inline-block btn-primary px-6 py-2 rounded-full"
         >Discover My World</a
       >
     </section>
@@ -106,10 +131,10 @@
     <!-- About Section -->
     <section
       id="about"
-      class="py-20 px-6 bg-[#fdf2e9] text-center"
+      class="py-20 px-6 bg-[#fdf2e9] text-center overflow-x-hidden"
       data-aos="fade-up"
     >
-      <h2 class="text-4xl font-bold text-[#8b5e3c] mb-4">About Me</h2>
+      <h2 class="text-4xl font-bold highlight mb-4">About Me</h2>
       <p
         class="max-w-3xl mx-auto text-gray-700 lg:text-[22px] md:text-[20px] sm:text-[18px]"
       >
@@ -126,10 +151,10 @@
     </section>
 
     <!-- Stories Preview Section -->
-    <section class="py-16 px-6" data-aos="fade-up" id="story_poetry_section">
+    <section class="py-16 px-6 overflow-x-hidden" data-aos="fade-up" id="story_poetry_section">
       <h2
         style="font-family: 'Noto Nastaliq Urdu', serif"
-        class="text-4xl font-bold text-center text-[#8b5e3c] mb-10"
+        class="text-4xl font-bold text-center highlight mb-10"
       >
         شاعری اور کہانیاں
       </h2>
@@ -138,13 +163,13 @@
       <div class="flex justify-center gap-6 mb-10">
         <a
           href="Peotry/pmain.html"
-          class="bg-[#8b5e3c] hover:bg-[#6d4b32] text-white px-6 py-2 rounded-full text-lg transition"
+          class="btn-primary px-6 py-2 rounded-full text-lg"
           style="font-family: 'Noto Nastaliq Urdu', serif"
           >📖 شاعری دیکھیں</a
         >
         <a
           href="Stories/smain.html"
-          class="bg-[#8b5e3c] hover:bg-[#6d4b32] text-white px-6 py-2 rounded-full text-lg transition"
+          class="btn-primary px-6 py-2 rounded-full text-lg"
           style="font-family: 'Noto Nastaliq Urdu', serif"
           >📚 کہانیاں دیکھیں</a
         >
@@ -154,56 +179,56 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         <!-- Poetry Card 1 -->
         <div
-          class="bg-gradient-to-br from-white to-[#fdf4e7] p-6 rounded-xl shadow hover:scale-105 transition"
+          class="card-bg p-6 rounded-xl shadow hover:scale-105 transition overflow-x-hidden"
           data-aos="fade-up"
           data-aos-delay="100"
           style="font-family: 'Noto Nastaliq Urdu', serif"
         >
-          <h3 class="text-xl font-semibold text-[#8b5e3c] mb-2">پہلی شاعری</h3>
+          <h3 class="text-xl font-semibold highlight mb-2">پہلی شاعری</h3>
           <p class="text-gray-600">
             کیا تم جانتے ہو؟ کہ جب کوئی محبت کرنے والا چھوڑ دیا جائے تو کیا
             گزرتی ہے؟
           </p>
           <a
             href="Peotry/p1.html"
-            class="inline-block mt-4 bg-[#8b5e3c] hover:bg-[#6d4b32] text-white px-4 py-2 rounded-full text-sm transition"
+            class="inline-block mt-4 btn-primary px-4 py-2 rounded-full text-sm"
             >مزید پڑھیں</a
           >
         </div>
 
         <!-- Poetry Card 2 -->
         <div
-          class="bg-gradient-to-br from-white to-[#fdf4e7] p-6 rounded-xl shadow hover:scale-105 transition"
+          class="card-bg p-6 rounded-xl shadow hover:scale-105 transition overflow-x-hidden"
           data-aos="fade-up"
           data-aos-delay="200"
           style="font-family: 'Noto Nastaliq Urdu', serif"
         >
-          <h3 class="text-xl font-semibold text-[#8b5e3c] mb-2">دوسری شاعری</h3>
+          <h3 class="text-xl font-semibold highlight mb-2">دوسری شاعری</h3>
           <p class="text-gray-600">
             کاش کبھی زندگی میں ایسی شام آئے جہاں سب خواب پورے ہوں...
           </p>
           <a
             href="Peotry/p2.html"
-            class="inline-block mt-4 bg-[#8b5e3c] hover:bg-[#6d4b32] text-white px-4 py-2 rounded-full text-sm transition"
+            class="inline-block mt-4 btn-primary px-4 py-2 rounded-full text-sm"
             >مزید پڑھیں</a
           >
         </div>
 
         <!-- Story Card -->
         <div
-          class="bg-gradient-to-br from-white to-[#fdf4e7] p-6 rounded-xl shadow hover:scale-105 transition"
+          class="card-bg p-6 rounded-xl shadow hover:scale-105 transition overflow-x-hidden"
           data-aos="fade-up"
           data-aos-delay="300"
           style="font-family: 'Noto Nastaliq Urdu', serif"
         >
-          <h3 class="text-xl font-semibold text-[#8b5e3c] mb-2">پہلی کہانی</h3>
+          <h3 class="text-xl font-semibold highlight mb-2">پہلی کہانی</h3>
           <p class="text-gray-600">
             ایک جانا پہچانا شخص فائلوں میں مصروف ہے… اور اس کی چائے ٹھنڈی ہو رہی
             ہے۔
           </p>
           <a
             href="Stories/s1.html"
-            class="inline-block mt-4 bg-[#8b5e3c] hover:bg-[#6d4b32] text-white px-4 py-2 rounded-full text-sm transition"
+            class="inline-block mt-4 btn-primary px-4 py-2 rounded-full text-sm"
             >پڑھیں</a
           >
         </div>
@@ -235,7 +260,7 @@
         Kya aap sirf scroll karte rahenge? 👀 Ya kuch bol bhi denge
         <a
           href="https://www.linkedin.com/in/palwashaprivv/"
-          class="font-semibold text-[#8b5e3c] underline hover:text-[#6d4b32]"
+          class="font-semibold highlight underline hover:text-[#6d4b32]"
           >LinkedIn</a
         >
         par? 😏✨
