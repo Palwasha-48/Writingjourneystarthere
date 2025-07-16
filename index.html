@@ -34,21 +34,6 @@
         background-color: #6d4b32;
         transform: scale(1.05);
       }
-      .scroll-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #8b5e3c;
-        color: #fff;
-        padding: 10px 15px;
-        border-radius: 50%;
-        cursor: pointer;
-        display: none;
-        transition: all 0.3s ease;
-      }
-      .scroll-top:hover {
-        background-color: #6d4b32;
-      }
       .calligraphy {
         position: absolute;
         font-size: 150px;
@@ -292,28 +277,5 @@
         Crafted with ❤️
       </p>
     </footer>
-
-    <!-- Scroll to Top Button -->
-    <div
-      class="scroll-top"
-      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-    >
-      ↑
-    </div>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-
-      // Show scroll button
-      window.addEventListener("scroll", function () {
-        const scrollBtn = document.querySelector(".scroll-top");
-        if (window.scrollY > 300) {
-          scrollBtn.style.display = "block";
-        } else {
-          scrollBtn.style.display = "none";
-        }
-      });
-    </script>
-  </body>
+</body>
 </html>
