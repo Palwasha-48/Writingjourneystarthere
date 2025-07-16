@@ -57,6 +57,22 @@
         pointer-events: none;
         z-index: 0;
       }
+      .responsive-ad {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 15%; /* You can adjust this for height */
+        overflow: hidden;
+      }
+
+      .responsive-ad iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        border: 0;
+      }
     </style>
   </head>
   <body class="text-gray-800 relative">
@@ -236,20 +252,22 @@
         </div>
       </div>
 
-      <!-- ✅ Ads 3 -->
-      <script type="text/javascript">
-        atOptions = {
-          key: "06dc782afd64dce6338db7dbb003ca30",
-          format: "iframe",
-          height: 60,
-          width: 468,
-          params: {},
-        };
-      </script>
-      <script
-        type="text/javascript"
-        src="https://www.highperformanceformat.com/06dc782afd64dce6338db7dbb003ca30/invoke.js"
-      ></script>
+      <!-- ✅ Ads Area (Responsive) -->
+      <div class="responsive-ad">
+        <script type="text/javascript">
+          atOptions = {
+            key: "06dc782afd64dce6338db7dbb003ca30",
+            format: "iframe",
+            height: 60,
+            width: 468,
+            params: {},
+          };
+        </script>
+        <script
+          type="text/javascript"
+          src="https://www.highperformanceformat.com/06dc782afd64dce6338db7dbb003ca30/invoke.js"
+        ></script>
+      </div>
     </section>
 
     <!-- Feedback Section -->
