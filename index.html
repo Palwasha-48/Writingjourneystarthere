@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>مِءاصلپ</title>
+    <title>شاعری – MIASLAP</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap"
@@ -11,47 +11,29 @@
     />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
-      html,
       body {
-        overflow-x: hidden; /* ✅ Prevent horizontal scroll */
-      }
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
-      body {
-        background-color: #fefaf6;
-        font-family: "Georgia", serif;
-        scroll-behavior: smooth;
-        width: 100vw; /* ✅ Make sure body doesn’t exceed viewport width */
-        position: relative;
-      }
-      .section-bg {
         background: linear-gradient(135deg, #fdf6f0, #fbeee6);
-      }
-      .card-bg {
-        background: linear-gradient(135deg, #ffffff, #fdf4e7);
+        font-family: "Noto Nastaliq Urdu", serif;
       }
       .highlight {
         color: #8b5e3c;
       }
-      .btn-primary {
-        background-color: #8b5e3c;
-        color: #fff;
+      .btn-read {
+        color: #8b5e3c;
+        border-bottom: 2px solid transparent;
         transition: all 0.3s ease;
       }
-      .btn-primary:hover {
-        background-color: #6d4b32;
-        transform: scale(1.05);
+      .btn-read:hover {
+        border-bottom: 2px solid #8b5e3c;
+        transform: translateY(-2px);
       }
-      .calligraphy {
-        position: absolute;
-        font-size: 150px;
-        color: #d8c2ad;
-        opacity: 0.05;
-        pointer-events: none;
-        z-index: 0;
+      .card {
+        background: linear-gradient(135deg, #ffffff, #fef4e7);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       }
       .responsive-ad iframe {
         max-width: 100%;
@@ -60,27 +42,31 @@
       }
     </style>
   </head>
-  <body class="text-gray-800 relative overflow-x-hidden">
+  <body class="text-gray-800">
     <!-- Navbar -->
     <nav
-      class="flex justify-between items-center px-8 py-4 bg-[#fffdfc]/80 backdrop-blur-md shadow-lg sticky top-0 z-50"
+      class="flex flex-row-reverse justify-between items-center px-8 py-4 bg-[#fffdfc]/80 backdrop-blur-md shadow-lg sticky top-0 z-50"
     >
-      <div class="text-3xl font-bold highlight flex items-center gap-2">
+      <!-- ✅ Logo on Left (LTR) -->
+      <div
+        class="text-3xl font-bold highlight flex items-center gap-2"
+        dir="ltr"
+      >
         <a href="../index.html">💎MIASLAP</a>
       </div>
 
-      <!-- Desktop Menu -->
+      <!-- ✅ Desktop Menu -->
       <div class="hidden md:flex gap-8 text-lg font-medium">
-        <a href="#about" class="hover:text-[#6d4b32] transition">About</a>
-        <a href="Stories/smain.html" class="hover:text-[#6d4b32] transition"
-          >Stories</a
-        >
-        <a href="Peotry/pmain.html" class="hover:text-[#6d4b32] transition"
+        <a href="../Peotry/pmain.html" class="hover:text-[#6d4b32] transition"
           >Poetry</a
         >
+        <a href="../Stories/smain.html" class="hover:text-[#6d4b32] transition"
+          >Stories</a
+        >
+        <a href="../index.html" class="hover:text-[#6d4b32] transition">Home</a>
       </div>
 
-      <!-- Mobile Menu Button -->
+      <!-- ✅ Mobile Menu Button -->
       <div class="md:hidden">
         <button
           onclick="toggleMenu()"
@@ -96,11 +82,17 @@
       id="mobileMenu"
       class="hidden flex flex-col gap-4 text-center bg-[#fffdfc] py-4 shadow-md md:hidden"
     >
-      <a href="#about" class="hover:text-[#6d4b32] transition block">About</a>
-      <a href="Stories/smain.html" class="hover:text-[#6d4b32] transition block"
+      <a href="../index.html" class="hover:text-[#6d4b32] transition block"
+        >Home</a
+      >
+      <a
+        href="../Stories/smain.html"
+        class="hover:text-[#6d4b32] transition block"
         >Stories</a
       >
-      <a href="Peotry/pmain.html" class="hover:text-[#6d4b32] transition block"
+      <a
+        href="../Peotry/pmain.html"
+        class="hover:text-[#6d4b32] transition block"
         >Poetry</a
       >
     </div>
@@ -112,176 +104,142 @@
       }
     </script>
 
-    <!-- Hero Section -->
-    <section
-      class="flex flex-col justify-center items-center text-center py-32 section-bg bg-cover relative overflow-x-hidden"
-      data-aos="fade-up"
-    >
-      <div class="calligraphy">مِءاصلپ</div>
-      <h1 class="text-5xl md:text-6xl font-extrabold highlight mb-6">
-        Khush Aamdeed!
+    <!-- Poetry Section -->
+    <section class="py-16 px-6">
+      <h1
+        class="text-5xl font-bold text-center highlight mb-10"
+        data-aos="fade-up"
+      >
+        شاعری
       </h1>
-      <p class="text-lg md:text-xl max-w-2xl text-gray-700">
-        Mein jis hurf par ungli rakh dun wo roshan ho jae 💗💡
-      </p>
-      <a
-        href="#story_poetry_section"
-        class="mt-6 inline-block btn-primary px-6 py-2 rounded-full"
-        >Discover My World</a
-      >
-    </section>
-
-    <!-- About Section -->
-    <section
-      id="about"
-      class="py-20 px-6 bg-[#fdf2e9] text-center overflow-x-hidden"
-      data-aos="fade-up"
-    >
-      <h2 class="text-4xl font-bold highlight mb-4">About Me</h2>
       <p
-        class="max-w-3xl mx-auto text-gray-700 lg:text-[22px] md:text-[20px] sm:text-[18px]"
+        class="text-center text-gray-600 mb-8 text-lg"
+        data-aos="fade-up"
+        data-aos-delay="100"
       >
-        This is my first website application :) <br />
-        I made it to share my short stories and poetry with the world.
-        <br />
-        Aesii hi bas bethe bethe khayal aya ke kuch karte hein tu bs ye karishma
-        kuch is trh hoa... phle tu mujhe laga ke buhat mushkil hogi, magar phir
-        sochna chora or website banani start krdi.
-        <br />
-        ye jaga mere lie sirf ek wesbite nhi he, balke ye wo kone he jahan mere
-        ALFAAZ sans lete hein.
+        کہاں ہوتا تھا تو؟ جب شاعری نا ہوتی تھی.. 🌸
       </p>
-    </section>
 
-    <!-- Stories Preview Section -->
-    <section
-      class="py-16 px-6 overflow-x-hidden"
-      data-aos="fade-up"
-      id="story_poetry_section"
-    >
-      <h2
-        style="font-family: 'Noto Nastaliq Urdu', serif"
-        class="text-4xl font-bold text-center highlight mb-10"
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
       >
-        شاعری اور کہانیاں
-      </h2>
-
-      <!-- Buttons -->
-      <div class="flex justify-center gap-6 mb-10">
-        <a
-          href="Peotry/pmain.html"
-          class="btn-primary px-6 py-2 rounded-full text-lg"
-          style="font-family: 'Noto Nastaliq Urdu', serif"
-          >📖 شاعری دیکھیں</a
-        >
-        <a
-          href="Stories/smain.html"
-          class="btn-primary px-6 py-2 rounded-full text-lg"
-          style="font-family: 'Noto Nastaliq Urdu', serif"
-          >📚 کہانیاں دیکھیں</a
-        >
-      </div>
-
-      <!-- Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         <!-- Poetry Card 1 -->
         <div
-          class="card-bg p-6 rounded-xl shadow hover:scale-105 transition overflow-x-hidden"
+          class="card rounded-xl p-6 shadow"
           data-aos="fade-up"
-          data-aos-delay="100"
-          style="font-family: 'Noto Nastaliq Urdu', serif"
+          data-aos-delay="200"
         >
-          <h3 class="text-xl font-semibold highlight mb-2">پہلی شاعری</h3>
-          <p class="text-gray-600">
-            کیا تم جانتے ہو؟ کہ جب کوئی محبت کرنے والا چھوڑ دیا جائے تو کیا
-            گزرتی ہے؟
+          <h2 class="text-3xl font-semibold highlight mb-3">غزل #1</h2>
+          <p class="mb-6 text-justify">
+            کیا تم جانتے ہو؟ <br />
+            کہ، <br />
+            جب کوئی کسی ایسے انسان کو چھوڑ جاتا ہے <br />
+            جو اس سے محبت کرتا ہو، <br />
+            تو اُس محبت کرنے والے پر کیا گزرتی ہے؟ <br />
           </p>
-          <a
-            href="Peotry/p1.html"
-            class="inline-block mt-4 btn-primary px-4 py-2 rounded-full text-sm"
-            >مزید پڑھیں</a
-          >
+          <a href="p1.html" class="btn-read font-medium">مزید پڑھیں</a>
         </div>
 
         <!-- Poetry Card 2 -->
         <div
-          class="card-bg p-6 rounded-xl shadow hover:scale-105 transition overflow-x-hidden"
-          data-aos="fade-up"
-          data-aos-delay="200"
-          style="font-family: 'Noto Nastaliq Urdu', serif"
-        >
-          <h3 class="text-xl font-semibold highlight mb-2">دوسری شاعری</h3>
-          <p class="text-gray-600">
-            کاش کبھی زندگی میں ایسی شام آئے جہاں سب خواب پورے ہوں...
-          </p>
-          <a
-            href="Peotry/p2.html"
-            class="inline-block mt-4 btn-primary px-4 py-2 rounded-full text-sm"
-            >مزید پڑھیں</a
-          >
-        </div>
-
-        <!-- Story Card -->
-        <div
-          class="card-bg p-6 rounded-xl shadow hover:scale-105 transition overflow-x-hidden"
+          class="card rounded-xl p-6 shadow"
           data-aos="fade-up"
           data-aos-delay="300"
-          style="font-family: 'Noto Nastaliq Urdu', serif"
         >
-          <h3 class="text-xl font-semibold highlight mb-2">پہلی کہانی</h3>
-          <p class="text-gray-600">
-            ایک جانا پہچانا شخص فائلوں میں مصروف ہے… اور اس کی چائے ٹھنڈی ہو رہی
-            ہے۔
+          <h2 class="text-3xl font-semibold highlight mb-3">غزل #2</h2>
+          <p class="mb-6 text-justify">
+            کاش <br />
+            کبھی زندگی میں ایسی شام آئے، <br />
+            وہ میرے ساتھ ہو، <br />
+            وہ پرانا ساتھ ہو۔ <br />
           </p>
-          <a
-            href="Stories/s1.html"
-            class="inline-block mt-4 btn-primary px-4 py-2 rounded-full text-sm"
-            >پڑھیں</a
-          >
+          <a href="p2.html" class="btn-read font-medium">مزید پڑھیں</a>
+        </div>
+
+        <!-- Poetry Card 3 -->
+        <div
+          class="card rounded-xl p-6 shadow"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <h2 class="text-3xl font-semibold highlight mb-3">غزل #3</h2>
+          <p class="mb-6 text-justify">
+            آج غضب ہوگیا، <br />
+            وہ چمکتی آنکھوں پر فِدا ہوگیا۔ <br />
+            مگر غضب کی بات یہ تھی کہ، <br />
+            وہ چمکتی آنکھیں میری نہیں تھیں۔
+          </p>
+          <a href="p3.html" class="btn-read font-medium">مزید پڑھیں</a>
+        </div>
+
+        <!-- Poetry Card 4 -->
+        <div
+          class="card rounded-xl p-6 shadow"
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
+          <h2 class="text-3xl font-semibold highlight mb-3">غزل #4</h2>
+          <p class="mb-6 text-justify">
+            اس نے مجھ سے پوچھا تمہیں کیا اچھا لگتا ہے؟<br />
+            میں نے کہا: <br />
+            مجھے تم پسند ہو۔۔۔<br />
+            مجھے تم اچھے لگتے ہو۔۔۔
+          </p>
+          <a href="p4.html" class="btn-read font-medium">مزید پڑھیں</a>
+        </div>
+
+
+        <!-- Poetry Card 5 -->
+        <div
+          class="card rounded-xl p-6 shadow"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
+          <h2 class="text-3xl font-semibold highlight mb-3">غزل #5</h2>
+          <p class="mb-6 text-justify">
+            میری غزلیں تمہیں یاد کرتی ہیں، <br />
+            تمہارے آنے کا انتظار کرتی ہیں...<br />
+            میں انہیں کہتی ہوں کہ تم نہیں آؤگے، <br />
+            آؤگے تو میں واپس بھیج دوں گی...
+          </p>
+          <a href="p5.html" class="btn-read font-medium">مزید پڑھیں</a>
+      </div>
+
+        <!-- Poetry Card 6 -->
+        <div
+          class="card rounded-xl p-6 shadow"
+          data-aos="fade-up"
+          data-aos-delay="700"
+        >
+          <h2 class="text-3xl font-semibold highlight mb-3">غزل #6</h2>
+          <p class="mb-6 text-justify">
+            وہ اُسے دیکھتا ہے اور میں اُسے، <br />
+            اُسے چمکتی چیزیں پسند ہیں <br />
+            (اور مجھے بس وہ)۔
+          </p>
+          <a href="p6.html" class="btn-read font-medium">مزید پڑھیں</a>
         </div>
       </div>
-
-      <!-- ✅ Ads Area (Responsive) -->
-      <div class="responsive-ad my-6">
-        <script type="text/javascript">
-          atOptions = {
-            key: "06dc782afd64dce6338db7dbb003ca30",
-            format: "iframe",
-            height: 60,
-            width: 468,
-            params: {},
-          };
-        </script>
-        <script
-          type="text/javascript"
-          src="https://www.highperformanceformat.com/06dc782afd64dce6338db7dbb003ca30/invoke.js"
-        ></script>
-      </div>
     </section>
 
-    <!-- Feedback Section -->
-    <section class="py-10 bg-[#fef1e6] text-center" data-aos="fade-up">
-      <p
-        class="italic text-gray-700 lg:text-[24px] md:text-[22px] sm:text-[20px]"
-      >
-        Kya aap sirf scroll karte rahenge? 👀 Ya kuch bol bhi denge
-        <a
-          href="https://www.linkedin.com/in/palwashey-qureshi/"
-          class="font-semibold highlight underline hover:text-[#6d4b32]"
-          >LinkedIn</a
-        >
-        par? 😏✨
-      </p>
-    </section>
+    <!-- ✅ Ads Area (Responsive) -->
+    <div class="responsive-ad my-6">
+      <script type="text/javascript">
+        atOptions = {
+          key: "06dc782afd64dce6338db7dbb003ca30",
+          format: "iframe",
+          height: 60,
+          width: 468,
+          params: {},
+        };
+      </script>
+      <script
+        type="text/javascript"
+        src="https://www.highperformanceformat.com/06dc782afd64dce6338db7dbb003ca30/invoke.js"
+      ></script>
+    </div>
 
-    <!-- Footer -->
-    <footer class="bg-[#eaddcf] py-6 text-center text-gray-700 text-[17px]">
-      <p>
-        &copy; 2025 مِءاصلپ by a girl <br />
-        Crafted with ❤️
-      </p>
-    </footer>
-
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
